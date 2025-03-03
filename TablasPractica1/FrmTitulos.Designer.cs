@@ -38,15 +38,15 @@
             dgvTitulos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvTitulos.Location = new Point(0, 0);
             dgvTitulos.Name = "dgvTitulos";
-            dgvTitulos.Size = new Size(800, 413);
+            dgvTitulos.Size = new Size(1086, 413);
             dgvTitulos.TabIndex = 0;
             dgvTitulos.CellContentClick += dgvTitulos_CellContentClick;
             // 
             // butInsertar
             // 
-            butInsertar.Location = new Point(713, 419);
+            butInsertar.Location = new Point(458, 437);
             butInsertar.Name = "butInsertar";
-            butInsertar.Size = new Size(75, 23);
+            butInsertar.Size = new Size(171, 23);
             butInsertar.TabIndex = 1;
             butInsertar.Text = "Insertar";
             butInsertar.UseVisualStyleBackColor = true;
@@ -56,7 +56,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(1086, 472);
             Controls.Add(butInsertar);
             Controls.Add(dgvTitulos);
             Name = "FrmTitulos";
