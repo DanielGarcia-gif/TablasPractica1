@@ -36,7 +36,20 @@ namespace TablasPractica1
 
         private void ActualizaEmpleados_Load(object sender, EventArgs e)
         {
-
+            if (txtID.Text.Substring(8, 1) == "M")
+            {
+                pictureBox.Image = Image.FromFile("C:\\Users\\yadia\\OneDrive\\Escritorio\\4to SEMESTRE\\TOPICOS AVANZADOS DE PROGRAMACION\\" +
+                                                  "TEMA 1\\EXAMEN\\UNIDAD 2\\PRACTICAS\\TEMA 2\\TablasPractica1\\TablasPractica1\\bin\\" +
+                                                  "Debug\\net8.0-windows\\employeeM.png");
+                pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
+            }
+            else if (txtID.Text.Substring(8, 1) == "F")
+            {
+                pictureBox.Image = Image.FromFile("C:\\Users\\yadia\\OneDrive\\Escritorio\\4to SEMESTRE\\TOPICOS AVANZADOS DE PROGRAMACION\\" +
+                                                  "TEMA 1\\EXAMEN\\UNIDAD 2\\PRACTICAS\\TEMA 2\\TablasPractica1\\TablasPractica1\\bin\\" +
+                                                  "Debug\\net8.0-windows\\employee.jpg");
+                pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
+            }
         }
 
         private void butEliminar_Click(object sender, EventArgs e)

@@ -44,11 +44,12 @@
             // 
             // butInsertar
             // 
-            butInsertar.Location = new Point(345, 440);
+            butInsertar.BackgroundImage = Properties.Resources.pngwing_com__6_;
+            butInsertar.BackgroundImageLayout = ImageLayout.Stretch;
+            butInsertar.Location = new Point(355, 444);
             butInsertar.Name = "butInsertar";
-            butInsertar.Size = new Size(204, 23);
+            butInsertar.Size = new Size(176, 143);
             butInsertar.TabIndex = 1;
-            butInsertar.Text = "Insertar";
             butInsertar.UseVisualStyleBackColor = true;
             butInsertar.Click += butInsertar_Click;
             // 
@@ -56,7 +57,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(894, 475);
+            ClientSize = new Size(894, 599);
             Controls.Add(butInsertar);
             Controls.Add(dgvEmpleados);
             Name = "FrmEmpleados";

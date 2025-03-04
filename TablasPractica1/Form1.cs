@@ -18,5 +18,10 @@ namespace TablasPractica1
             FrmEmpleados Empleados = new FrmEmpleados();
             Empleados.Show();
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

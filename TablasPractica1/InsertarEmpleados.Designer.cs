@@ -46,10 +46,14 @@
             txtID = new TextBox();
             butInsertar = new Button();
             butCancelar = new Button();
+            pictureBox = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)pictureBox).BeginInit();
             SuspendLayout();
             // 
             // mtbHire_Date
             // 
+            mtbHire_Date.BackColor = Color.FromArgb(224, 224, 224);
+            mtbHire_Date.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             mtbHire_Date.Location = new Point(142, 146);
             mtbHire_Date.Mask = "00/00/0000";
             mtbHire_Date.Name = "mtbHire_Date";
@@ -59,23 +63,27 @@
             // label10
             // 
             label10.AutoSize = true;
+            label10.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             label10.Location = new Point(142, 128);
             label10.Name = "label10";
-            label10.Size = new Size(57, 15);
+            label10.Size = new Size(61, 15);
             label10.TabIndex = 60;
             label10.Text = "Hire_date";
             // 
             // label9
             // 
             label9.AutoSize = true;
+            label9.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             label9.Location = new Point(142, 72);
             label9.Name = "label9";
-            label9.Size = new Size(42, 15);
+            label9.Size = new Size(44, 15);
             label9.TabIndex = 59;
             label9.Text = "Job_lvl";
             // 
             // txtJob_lvl
             // 
+            txtJob_lvl.BackColor = Color.FromArgb(224, 224, 224);
+            txtJob_lvl.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             txtJob_lvl.Location = new Point(142, 90);
             txtJob_lvl.Name = "txtJob_lvl";
             txtJob_lvl.Size = new Size(121, 23);
@@ -84,14 +92,17 @@
             // label8
             // 
             label8.AutoSize = true;
+            label8.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             label8.Location = new Point(21, 72);
             label8.Name = "label8";
-            label8.Size = new Size(41, 15);
+            label8.Size = new Size(44, 15);
             label8.TabIndex = 57;
             label8.Text = "Job_ID";
             // 
             // txtJob_ID
             // 
+            txtJob_ID.BackColor = Color.FromArgb(224, 224, 224);
+            txtJob_ID.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             txtJob_ID.Location = new Point(21, 90);
             txtJob_ID.Name = "txtJob_ID";
             txtJob_ID.Size = new Size(100, 23);
@@ -100,14 +111,17 @@
             // label7
             // 
             label7.AutoSize = true;
+            label7.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             label7.Location = new Point(284, 17);
             label7.Name = "label7";
-            label7.Size = new Size(45, 15);
+            label7.Size = new Size(46, 15);
             label7.TabIndex = 55;
             label7.Text = "LName";
             // 
             // txtLName
             // 
+            txtLName.BackColor = Color.FromArgb(224, 224, 224);
+            txtLName.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             txtLName.Location = new Point(284, 35);
             txtLName.MaxLength = 12;
             txtLName.Name = "txtLName";
@@ -117,14 +131,17 @@
             // label6
             // 
             label6.AutoSize = true;
+            label6.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             label6.Location = new Point(142, 17);
             label6.Name = "label6";
-            label6.Size = new Size(45, 15);
+            label6.Size = new Size(46, 15);
             label6.TabIndex = 53;
             label6.Text = "FName";
             // 
             // txtFName
             // 
+            txtFName.BackColor = Color.FromArgb(224, 224, 224);
+            txtFName.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             txtFName.Location = new Point(142, 35);
             txtFName.Name = "txtFName";
             txtFName.Size = new Size(121, 23);
@@ -133,14 +150,17 @@
             // label3
             // 
             label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             label3.Location = new Point(21, 128);
             label3.Name = "label3";
-            label3.Size = new Size(44, 15);
+            label3.Size = new Size(46, 15);
             label3.TabIndex = 51;
             label3.Text = "Pub_ID";
             // 
             // txtPub_ID
             // 
+            txtPub_ID.BackColor = Color.FromArgb(224, 224, 224);
+            txtPub_ID.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             txtPub_ID.Location = new Point(21, 146);
             txtPub_ID.MaxLength = 4;
             txtPub_ID.Name = "txtPub_ID";
@@ -150,14 +170,17 @@
             // label2
             // 
             label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             label2.Location = new Point(437, 17);
             label2.Name = "label2";
-            label2.Size = new Size(35, 15);
+            label2.Size = new Size(36, 15);
             label2.TabIndex = 49;
             label2.Text = "Minit";
             // 
             // txtMinit
             // 
+            txtMinit.BackColor = Color.FromArgb(224, 224, 224);
+            txtMinit.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             txtMinit.Location = new Point(437, 35);
             txtMinit.MaxLength = 1;
             txtMinit.Name = "txtMinit";
@@ -167,14 +190,17 @@
             // label1
             // 
             label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             label1.Location = new Point(21, 17);
             label1.Name = "label1";
-            label1.Size = new Size(18, 15);
+            label1.Size = new Size(20, 15);
             label1.TabIndex = 47;
             label1.Text = "ID";
             // 
             // txtID
             // 
+            txtID.BackColor = Color.FromArgb(224, 224, 224);
+            txtID.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             txtID.Location = new Point(21, 35);
             txtID.MaxLength = 9;
             txtID.Name = "txtID";
@@ -184,29 +210,43 @@
             // 
             // butInsertar
             // 
-            butInsertar.Location = new Point(311, 190);
+            butInsertar.BackgroundImage = Properties.Resources.Captura_de_pantalla_2025_03_03_192348;
+            butInsertar.BackgroundImageLayout = ImageLayout.Stretch;
+            butInsertar.Location = new Point(239, 190);
             butInsertar.Name = "butInsertar";
-            butInsertar.Size = new Size(75, 23);
+            butInsertar.Size = new Size(111, 34);
             butInsertar.TabIndex = 62;
-            butInsertar.Text = "Insertar";
             butInsertar.UseVisualStyleBackColor = true;
             butInsertar.Click += butInsertar_Click;
             // 
             // butCancelar
             // 
-            butCancelar.Location = new Point(392, 190);
+            butCancelar.BackgroundImage = Properties.Resources.Captura_de_pantalla_2025_03_03_182401;
+            butCancelar.BackgroundImageLayout = ImageLayout.Stretch;
+            butCancelar.Location = new Point(356, 190);
             butCancelar.Name = "butCancelar";
-            butCancelar.Size = new Size(75, 23);
+            butCancelar.Size = new Size(111, 34);
             butCancelar.TabIndex = 63;
-            butCancelar.Text = "Cancelar";
             butCancelar.UseVisualStyleBackColor = true;
             butCancelar.Click += butCancelar_Click;
+            // 
+            // pictureBox
+            // 
+            pictureBox.Image = Properties.Resources.employeeM;
+            pictureBox.Location = new Point(306, 72);
+            pictureBox.Name = "pictureBox";
+            pictureBox.Size = new Size(93, 97);
+            pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox.TabIndex = 64;
+            pictureBox.TabStop = false;
             // 
             // InsertarEmpleados
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(483, 225);
+            BackColor = SystemColors.Window;
+            ClientSize = new Size(483, 242);
+            Controls.Add(pictureBox);
             Controls.Add(butCancelar);
             Controls.Add(butInsertar);
             Controls.Add(mtbHire_Date);
@@ -227,6 +267,8 @@
             Controls.Add(txtID);
             Name = "InsertarEmpleados";
             Text = "InsertarEmpleados";
+            Load += InsertarEmpleados_Load;
+            ((System.ComponentModel.ISupportInitialize)pictureBox).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -251,5 +293,6 @@
         private TextBox txtID;
         private Button butInsertar;
         private Button butCancelar;
+        private PictureBox pictureBox;
     }
 }
