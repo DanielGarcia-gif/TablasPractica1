@@ -31,7 +31,6 @@
             txtID = new TextBox();
             label1 = new Label();
             label2 = new Label();
-            txtPub_ID = new TextBox();
             label3 = new Label();
             txtRoyalty = new TextBox();
             label4 = new Label();
@@ -51,6 +50,9 @@
             txtActualizar = new Button();
             mtbPubdate = new MaskedTextBox();
             butEliminar = new Button();
+            pictureBox1 = new PictureBox();
+            cbPub_ID = new ComboBox();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // txtID
@@ -83,16 +85,6 @@
             label2.TabIndex = 3;
             label2.Text = "pub_ID";
             // 
-            // txtPub_ID
-            // 
-            txtPub_ID.BackColor = Color.FromArgb(224, 224, 224);
-            txtPub_ID.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            txtPub_ID.Location = new Point(15, 86);
-            txtPub_ID.MaxLength = 4;
-            txtPub_ID.Name = "txtPub_ID";
-            txtPub_ID.Size = new Size(100, 23);
-            txtPub_ID.TabIndex = 2;
-            // 
             // label3
             // 
             label3.AutoSize = true;
@@ -116,7 +108,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            label4.Location = new Point(263, 125);
+            label4.Location = new Point(18, 181);
             label4.Name = "label4";
             label4.Size = new Size(56, 15);
             label4.TabIndex = 7;
@@ -126,7 +118,7 @@
             // 
             txtYtd_Sales.BackColor = Color.FromArgb(224, 224, 224);
             txtYtd_Sales.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            txtYtd_Sales.Location = new Point(263, 143);
+            txtYtd_Sales.Location = new Point(18, 199);
             txtYtd_Sales.Name = "txtYtd_Sales";
             txtYtd_Sales.Size = new Size(100, 23);
             txtYtd_Sales.TabIndex = 6;
@@ -135,7 +127,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            label5.Location = new Point(15, 183);
+            label5.Location = new Point(18, 237);
             label5.Name = "label5";
             label5.Size = new Size(38, 15);
             label5.TabIndex = 9;
@@ -145,7 +137,8 @@
             // 
             txtNotas.BackColor = Color.FromArgb(224, 224, 224);
             txtNotas.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            txtNotas.Location = new Point(20, 201);
+            txtNotas.Location = new Point(18, 255);
+            txtNotas.MaxLength = 200;
             txtNotas.Name = "txtNotas";
             txtNotas.Size = new Size(392, 23);
             txtNotas.TabIndex = 8;
@@ -165,6 +158,7 @@
             txtTitulo.BackColor = Color.FromArgb(224, 224, 224);
             txtTitulo.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             txtTitulo.Location = new Point(136, 32);
+            txtTitulo.MaxLength = 80;
             txtTitulo.Name = "txtTitulo";
             txtTitulo.Size = new Size(156, 23);
             txtTitulo.TabIndex = 10;
@@ -242,7 +236,7 @@
             // 
             butCancelar.BackgroundImage = Properties.Resources.Captura_de_pantalla_2025_03_03_182401;
             butCancelar.BackgroundImageLayout = ImageLayout.Stretch;
-            butCancelar.Location = new Point(297, 244);
+            butCancelar.Location = new Point(295, 298);
             butCancelar.Name = "butCancelar";
             butCancelar.Size = new Size(113, 41);
             butCancelar.TabIndex = 20;
@@ -253,7 +247,7 @@
             // 
             txtActualizar.BackgroundImage = Properties.Resources.Captura_de_pantalla_2025_03_03_181945;
             txtActualizar.BackgroundImageLayout = ImageLayout.Stretch;
-            txtActualizar.Location = new Point(158, 244);
+            txtActualizar.Location = new Point(156, 298);
             txtActualizar.Name = "txtActualizar";
             txtActualizar.Size = new Size(113, 41);
             txtActualizar.TabIndex = 21;
@@ -274,19 +268,40 @@
             // 
             butEliminar.BackgroundImage = Properties.Resources.Captura_de_pantalla_2025_03_03_163039;
             butEliminar.BackgroundImageLayout = ImageLayout.Stretch;
-            butEliminar.Location = new Point(18, 244);
+            butEliminar.Location = new Point(16, 298);
             butEliminar.Name = "butEliminar";
             butEliminar.Size = new Size(113, 41);
             butEliminar.TabIndex = 23;
             butEliminar.UseVisualStyleBackColor = true;
             butEliminar.Click += butEliminar_Click;
             // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources.titles;
+            pictureBox1.Location = new Point(277, 125);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(115, 110);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 46;
+            pictureBox1.TabStop = false;
+            // 
+            // cbPub_ID
+            // 
+            cbPub_ID.FormattingEnabled = true;
+            cbPub_ID.Items.AddRange(new object[] { "0736", "0877", "1389", "1622", "1756", "9901", "9952", "9999" });
+            cbPub_ID.Location = new Point(16, 86);
+            cbPub_ID.Name = "cbPub_ID";
+            cbPub_ID.Size = new Size(99, 23);
+            cbPub_ID.TabIndex = 50;
+            // 
             // ActualizarTitulo
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Window;
-            ClientSize = new Size(445, 307);
+            ClientSize = new Size(445, 349);
+            Controls.Add(cbPub_ID);
+            Controls.Add(pictureBox1);
             Controls.Add(butEliminar);
             Controls.Add(mtbPubdate);
             Controls.Add(txtActualizar);
@@ -307,11 +322,11 @@
             Controls.Add(label3);
             Controls.Add(txtRoyalty);
             Controls.Add(label2);
-            Controls.Add(txtPub_ID);
             Controls.Add(label1);
             Controls.Add(txtID);
             Name = "ActualizarTitulo";
             Text = "ActualizarTitulo";
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -321,7 +336,6 @@
         private TextBox txtID;
         private Label label1;
         private Label label2;
-        private TextBox txtPub_ID;
         private Label label3;
         private TextBox txtRoyalty;
         private Label label4;
@@ -341,5 +355,7 @@
         private Button txtActualizar;
         private MaskedTextBox mtbPubdate;
         private Button butEliminar;
+        private PictureBox pictureBox1;
+        private ComboBox cbPub_ID;
     }
 }

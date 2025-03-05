@@ -20,7 +20,9 @@ namespace TablasPractica1
         private void FrmTitulos_Load(object sender, EventArgs e)
         {
             Datos obj = new Datos();
-            DataSet ds = obj.consulta("Select * From titles");
+            DataSet ds = obj.consulta(("Select title_id as ID,title as [Title], type as [Type],pub_id as PubID," +
+                                      "price as Price,advance as Advance ,royalty as Royalty,ytd_sales as Sales," +
+                                      "notes as Notes,pubdate as PubDate From Titles");
 
             if (ds != null)
             {
@@ -53,7 +55,9 @@ namespace TablasPractica1
         private void ActualizaGrid()
         {
             Datos obj = new Datos();
-            DataSet ds = obj.consulta("Select * For titles");
+            DataSet ds = obj.consulta("Select title_id as ID,title as [Title], type as [Type],pub_id as PubID," +
+                                      "price as Price,advance as Advance ,royalty as Royalty,ytd_sales as Sales," +
+                                      "notes as Notes,pubdate as PubDate From Titles");
 
             if (ds != null)
             {

@@ -54,6 +54,10 @@ namespace TablasPractica1
             {
                 MessageBox.Show("Error al insertar. Favor de verificar los tipos de datos ingresados", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            catch (ArgumentOutOfRangeException ex)
+            {
+                MessageBox.Show("Error al insertar. Favor de verificar los datos ingresados", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void butCancelar_Click(object sender, EventArgs e)

@@ -45,11 +45,13 @@
             label3 = new Label();
             txtRoyalty = new TextBox();
             label2 = new Label();
-            txtPub_ID = new TextBox();
             label1 = new Label();
             txtID = new TextBox();
             butInsertar = new Button();
             butCancelar = new Button();
+            pictureBox1 = new PictureBox();
+            cbPub_ID = new ComboBox();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // mtbPubdate
@@ -145,6 +147,7 @@
             txtTitulo.BackColor = Color.FromArgb(224, 224, 224);
             txtTitulo.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             txtTitulo.Location = new Point(142, 32);
+            txtTitulo.MaxLength = 80;
             txtTitulo.Name = "txtTitulo";
             txtTitulo.Size = new Size(156, 23);
             txtTitulo.TabIndex = 33;
@@ -153,7 +156,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            label5.Location = new Point(21, 183);
+            label5.Location = new Point(21, 233);
             label5.Name = "label5";
             label5.Size = new Size(38, 15);
             label5.TabIndex = 32;
@@ -163,7 +166,8 @@
             // 
             txtNotas.BackColor = Color.FromArgb(224, 224, 224);
             txtNotas.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            txtNotas.Location = new Point(21, 201);
+            txtNotas.Location = new Point(21, 251);
+            txtNotas.MaxLength = 200;
             txtNotas.Name = "txtNotas";
             txtNotas.Size = new Size(400, 23);
             txtNotas.TabIndex = 31;
@@ -172,7 +176,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            label4.Location = new Point(269, 125);
+            label4.Location = new Point(21, 178);
             label4.Name = "label4";
             label4.Size = new Size(56, 15);
             label4.TabIndex = 30;
@@ -182,7 +186,7 @@
             // 
             txtYtd_Sales.BackColor = Color.FromArgb(224, 224, 224);
             txtYtd_Sales.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            txtYtd_Sales.Location = new Point(269, 143);
+            txtYtd_Sales.Location = new Point(21, 196);
             txtYtd_Sales.Name = "txtYtd_Sales";
             txtYtd_Sales.Size = new Size(100, 23);
             txtYtd_Sales.TabIndex = 29;
@@ -216,16 +220,6 @@
             label2.TabIndex = 26;
             label2.Text = "pub_ID";
             // 
-            // txtPub_ID
-            // 
-            txtPub_ID.BackColor = Color.FromArgb(224, 224, 224);
-            txtPub_ID.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            txtPub_ID.Location = new Point(21, 86);
-            txtPub_ID.MaxLength = 4;
-            txtPub_ID.Name = "txtPub_ID";
-            txtPub_ID.Size = new Size(100, 23);
-            txtPub_ID.TabIndex = 25;
-            // 
             // label1
             // 
             label1.AutoSize = true;
@@ -250,7 +244,7 @@
             // 
             butInsertar.BackgroundImage = Properties.Resources.Captura_de_pantalla_2025_03_03_192348;
             butInsertar.BackgroundImageLayout = ImageLayout.Stretch;
-            butInsertar.Location = new Point(187, 238);
+            butInsertar.Location = new Point(187, 288);
             butInsertar.Name = "butInsertar";
             butInsertar.Size = new Size(111, 34);
             butInsertar.TabIndex = 43;
@@ -261,19 +255,40 @@
             // 
             butCancelar.BackgroundImage = Properties.Resources.Captura_de_pantalla_2025_03_03_182401;
             butCancelar.BackgroundImageLayout = ImageLayout.Stretch;
-            butCancelar.Location = new Point(310, 238);
+            butCancelar.Location = new Point(310, 288);
             butCancelar.Name = "butCancelar";
             butCancelar.Size = new Size(111, 34);
             butCancelar.TabIndex = 44;
             butCancelar.UseVisualStyleBackColor = true;
             butCancelar.Click += butCancelar_Click;
             // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources.titles;
+            pictureBox1.Location = new Point(288, 125);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(115, 110);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 45;
+            pictureBox1.TabStop = false;
+            // 
+            // cbPub_ID
+            // 
+            cbPub_ID.FormattingEnabled = true;
+            cbPub_ID.Items.AddRange(new object[] { "0736", "0877", "1389", "1622", "1756", "9901", "9952", "9999" });
+            cbPub_ID.Location = new Point(21, 86);
+            cbPub_ID.Name = "cbPub_ID";
+            cbPub_ID.Size = new Size(99, 23);
+            cbPub_ID.TabIndex = 50;
+            // 
             // InsertarLibros
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Window;
-            ClientSize = new Size(439, 284);
+            ClientSize = new Size(439, 336);
+            Controls.Add(cbPub_ID);
+            Controls.Add(pictureBox1);
             Controls.Add(butCancelar);
             Controls.Add(butInsertar);
             Controls.Add(mtbPubdate);
@@ -293,11 +308,11 @@
             Controls.Add(label3);
             Controls.Add(txtRoyalty);
             Controls.Add(label2);
-            Controls.Add(txtPub_ID);
             Controls.Add(label1);
             Controls.Add(txtID);
             Name = "InsertarLibros";
             Text = "InsertarLibros";
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -321,10 +336,11 @@
         private Label label3;
         private TextBox txtRoyalty;
         private Label label2;
-        private TextBox txtPub_ID;
         private Label label1;
         private TextBox txtID;
         private Button butInsertar;
         private Button butCancelar;
+        private PictureBox pictureBox1;
+        private ComboBox cbPub_ID;
     }
 }

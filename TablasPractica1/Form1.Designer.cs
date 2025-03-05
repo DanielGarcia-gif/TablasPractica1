@@ -132,7 +132,7 @@
             Controls.Add(label1);
             Controls.Add(panel3);
             Name = "Form1";
-            Text = "Form1";
+            Text = "Inicio";
             panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();

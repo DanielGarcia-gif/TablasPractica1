@@ -36,18 +36,18 @@
             label9 = new Label();
             txtJob_lvl = new TextBox();
             label8 = new Label();
-            txtJob_ID = new TextBox();
             label7 = new Label();
             txtLName = new TextBox();
             label6 = new Label();
             txtFName = new TextBox();
             label3 = new Label();
-            txtPub_ID = new TextBox();
             label2 = new Label();
             txtMinit = new TextBox();
             label1 = new Label();
             txtID = new TextBox();
             pictureBox = new PictureBox();
+            cbJob_ID = new ComboBox();
+            cbPub_ID = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox).BeginInit();
             SuspendLayout();
             // 
@@ -136,15 +136,6 @@
             label8.TabIndex = 39;
             label8.Text = "Job_ID";
             // 
-            // txtJob_ID
-            // 
-            txtJob_ID.BackColor = Color.FromArgb(224, 224, 224);
-            txtJob_ID.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            txtJob_ID.Location = new Point(12, 83);
-            txtJob_ID.Name = "txtJob_ID";
-            txtJob_ID.Size = new Size(100, 23);
-            txtJob_ID.TabIndex = 38;
-            // 
             // label7
             // 
             label7.AutoSize = true;
@@ -160,7 +151,7 @@
             txtLName.BackColor = Color.FromArgb(224, 224, 224);
             txtLName.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             txtLName.Location = new Point(275, 28);
-            txtLName.MaxLength = 12;
+            txtLName.MaxLength = 30;
             txtLName.Name = "txtLName";
             txtLName.Size = new Size(134, 23);
             txtLName.TabIndex = 36;
@@ -180,6 +171,7 @@
             txtFName.BackColor = Color.FromArgb(224, 224, 224);
             txtFName.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             txtFName.Location = new Point(133, 28);
+            txtFName.MaxLength = 20;
             txtFName.Name = "txtFName";
             txtFName.Size = new Size(121, 23);
             txtFName.TabIndex = 34;
@@ -194,16 +186,6 @@
             label3.TabIndex = 29;
             label3.Text = "Pub_ID";
             // 
-            // txtPub_ID
-            // 
-            txtPub_ID.BackColor = Color.FromArgb(224, 224, 224);
-            txtPub_ID.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            txtPub_ID.Location = new Point(12, 139);
-            txtPub_ID.MaxLength = 4;
-            txtPub_ID.Name = "txtPub_ID";
-            txtPub_ID.Size = new Size(100, 23);
-            txtPub_ID.TabIndex = 28;
-            // 
             // label2
             // 
             label2.AutoSize = true;
@@ -216,11 +198,12 @@
             // 
             // txtMinit
             // 
-            txtMinit.BackColor = Color.FromArgb(224, 224, 224);
+            txtMinit.BackColor = Color.Silver;
             txtMinit.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             txtMinit.Location = new Point(428, 28);
             txtMinit.MaxLength = 1;
             txtMinit.Name = "txtMinit";
+            txtMinit.ReadOnly = true;
             txtMinit.Size = new Size(30, 23);
             txtMinit.TabIndex = 26;
             // 
@@ -256,12 +239,32 @@
             pictureBox.TabIndex = 47;
             pictureBox.TabStop = false;
             // 
+            // cbJob_ID
+            // 
+            cbJob_ID.FormattingEnabled = true;
+            cbJob_ID.Items.AddRange(new object[] { "New Hire", "Chief Executive Officer", "Bussines Operations Manager", "Chief Financial Officer", "Publisher", "Managing Editor", "Marketing Manager", "Public Relations Manager", "Acquistions Manager", "Productions Manager", "Operations Manager", "Editor", "Sales Representative", "Designer" });
+            cbJob_ID.Location = new Point(13, 87);
+            cbJob_ID.Name = "cbJob_ID";
+            cbJob_ID.Size = new Size(99, 23);
+            cbJob_ID.TabIndex = 48;
+            // 
+            // cbPub_ID
+            // 
+            cbPub_ID.FormattingEnabled = true;
+            cbPub_ID.Items.AddRange(new object[] { "0736", "0877", "1389", "1622", "1756", "9901", "9952", "9999" });
+            cbPub_ID.Location = new Point(12, 139);
+            cbPub_ID.Name = "cbPub_ID";
+            cbPub_ID.Size = new Size(99, 23);
+            cbPub_ID.TabIndex = 49;
+            // 
             // ActualizaEmpleados
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Window;
             ClientSize = new Size(478, 245);
+            Controls.Add(cbPub_ID);
+            Controls.Add(cbJob_ID);
             Controls.Add(pictureBox);
             Controls.Add(butEliminar);
             Controls.Add(mtbHire_Date);
@@ -271,19 +274,17 @@
             Controls.Add(label9);
             Controls.Add(txtJob_lvl);
             Controls.Add(label8);
-            Controls.Add(txtJob_ID);
             Controls.Add(label7);
             Controls.Add(txtLName);
             Controls.Add(label6);
             Controls.Add(txtFName);
             Controls.Add(label3);
-            Controls.Add(txtPub_ID);
             Controls.Add(label2);
             Controls.Add(txtMinit);
             Controls.Add(label1);
             Controls.Add(txtID);
             Name = "ActualizaEmpleados";
-            Text = "ActualizaEmpleados";
+            Text = "Actualizar Empleado";
             Load += ActualizaEmpleados_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox).EndInit();
             ResumeLayout(false);
@@ -300,17 +301,17 @@
         private Label label9;
         private TextBox txtJob_lvl;
         private Label label8;
-        private TextBox txtJob_ID;
         private Label label7;
         private TextBox txtLName;
         private Label label6;
         private TextBox txtFName;
         private Label label3;
-        private TextBox txtPub_ID;
         private Label label2;
         private TextBox txtMinit;
         private Label label1;
         private TextBox txtID;
         private PictureBox pictureBox;
+        private ComboBox cbJob_ID;
+        private ComboBox cbPub_ID;
     }
 }

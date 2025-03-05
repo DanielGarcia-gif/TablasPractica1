@@ -103,6 +103,26 @@ namespace TablasPractica1.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap emp {
+            get {
+                object obj = ResourceManager.GetObject("emp", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap empAdd {
+            get {
+                object obj = ResourceManager.GetObject("empAdd", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap employee {
             get {
                 object obj = ResourceManager.GetObject("employee", resourceCulture);
@@ -126,6 +146,16 @@ namespace TablasPractica1.Properties {
         internal static System.Drawing.Bitmap pngwing_com__6_ {
             get {
                 object obj = ResourceManager.GetObject("pngwing.com (6)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pngwing_com__7_ {
+            get {
+                object obj = ResourceManager.GetObject("pngwing.com (7)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

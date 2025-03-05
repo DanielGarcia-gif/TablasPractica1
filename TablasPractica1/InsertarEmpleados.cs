@@ -36,7 +36,7 @@ namespace TablasPractica1
 
                 if (txtID.Text.Substring(8, 1) != "M" && txtID.Text.Substring(8, 1) != "F")
                 {
-                    MessageBox.Show("Error al actualizar \nEl ultimo digito del ID es el genero \n- Masculino (M) \n- Femenino (F)",
+                    MessageBox.Show("Error al insertar \nEl ultimo digito del ID es el genero \n- Masculino (M) \n- Femenino (F)",
                                     "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     pictureBox.Image = null;
                 }
@@ -47,9 +47,9 @@ namespace TablasPractica1
                                                                            txtFName.Text.Replace("'", "''") + "','" +
                                                                            txtMinit.Text + "','" +
                                                                            txtLName.Text.Replace("'", "''") + "'," +
-                                                                           int.Parse(txtJob_ID.Text) + "," +
+                                                                           (cbJob_ID.SelectedIndex + 1) + "," +
                                                                            int.Parse(txtJob_lvl.Text) + ",'" +
-                                                                           txtPub_ID.Text + "','" +
+                                                                           (cbPub_ID.SelectedIndex + 1) + "','" +
                                                                            fecha + "')");
 
                     if (f == true)

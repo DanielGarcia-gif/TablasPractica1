@@ -21,9 +21,9 @@ namespace TablasPractica1
             txtFName.Text = fname;
             txtLName.Text = lname;
             txtMinit.Text = minit;
-            txtJob_ID.Text = job_ID;
+            //txtJob_ID.Text = job_ID;
             txtJob_lvl.Text = job_lvl;
-            txtPub_ID.Text = pub_ID;
+            //txtPub_ID.Text = pub_ID;
             mtbHire_Date.Text = hire_date;
         }
 
@@ -89,9 +89,9 @@ namespace TablasPractica1
                                        "fname = '" + txtFName.Text.Replace("'", "''") +
                                        "', minit = '" + txtMinit.Text +
                                        "', lname = '" + txtLName.Text.Replace("'", "''") +
-                                       "', job_id = " + int.Parse(txtJob_ID.Text) +
+                                       "', job_id = " + (cbJob_ID.SelectedIndex + 1) +
                                        ", job_lvl = " + int.Parse(txtJob_lvl.Text) +
-                                       ", pub_id = '" + txtPub_ID.Text +
+                                       ", pub_id = '" + (cbPub_ID.SelectedIndex + 1) +
                                        "', hire_date = '" + fecha +
                                        "' where emp_id = '" + txtID.Text + "'");
 

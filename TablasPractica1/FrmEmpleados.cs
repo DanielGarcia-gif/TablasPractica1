@@ -20,7 +20,9 @@ namespace TablasPractica1
         private void FrmEmpleados_Load(object sender, EventArgs e)
         {
             Datos obj = new Datos();
-            DataSet ds = obj.consulta("Select * From employee");
+            DataSet ds = obj.consulta("Select emp_id as ID , fname as [Frist Name], minit as Minit, lname as [Last Name]," +
+                                      " job_id as [Job ID], job_lvl as [Job Level], pub_id as [Pub ID], hire_date as [Hire date]" +
+                                      " From employee");
 
             if (ds != null)
             {
@@ -35,7 +37,9 @@ namespace TablasPractica1
         private void ActualizaGrid()
         {
             Datos obj = new Datos();
-            DataSet ds = obj.consulta("Select * For employee");
+            DataSet ds = obj.consulta("Select emp_id as ID , fname as [Frist Name], minit as Minit, lname as [Last Name]," +
+                                      " job_id as [Job ID], job_lvl as [Job Level], pub_id as [Pub ID], hire_date as [Hire date]" +
+                                      " From employee");
 
             if (ds != null)
             {
@@ -63,6 +67,11 @@ namespace TablasPractica1
             InsertarEmpleados insertar = new InsertarEmpleados();
             insertar.Show();
             this.Close();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
