@@ -20,9 +20,10 @@ namespace TablasPractica1
         private void FrmEmpleados_Load(object sender, EventArgs e)
         {
             Datos obj = new Datos();
-            DataSet ds = obj.consulta("Select emp_id as ID , fname as [Frist Name], minit as Minit, lname as [Last Name]," +
-                                      " job_id as [Job ID], job_lvl as [Job Level], pub_id as [Pub ID], hire_date as [Hire date]" +
-                                      " From employee");
+            DataSet ds = obj.consulta("select emp_id as ID , fname as [Frist Name], minit as Minit, lname as [Last Name], " +
+                                      "j.job_desc as [Job Description], job_lvl as [Job Level], pb.pub_name as [PUB Name], " +
+                                      "hire_date as [Hire date] from employee e , jobs j, publishers pb " +
+                                      "where j.job_id = e.job_id and e.pub_id = pb.pub_id");
 
             if (ds != null)
             {
@@ -37,9 +38,10 @@ namespace TablasPractica1
         private void ActualizaGrid()
         {
             Datos obj = new Datos();
-            DataSet ds = obj.consulta("Select emp_id as ID , fname as [Frist Name], minit as Minit, lname as [Last Name]," +
-                                      " job_id as [Job ID], job_lvl as [Job Level], pub_id as [Pub ID], hire_date as [Hire date]" +
-                                      " From employee");
+            DataSet ds = obj.consulta("select emp_id as ID , fname as [Frist Name], minit as Minit, lname as [Last Name], " +
+                                      "j.job_desc as [Job Description], job_lvl as [Job Level], pb.pub_name as [PUB Name], " +
+                                      "hire_date as [Hire date] from employee e , jobs j, publishers pb " +
+                                      "where j.job_id = e.job_id and e.pub_id = pb.pub_id");
 
             if (ds != null)
             {
@@ -59,14 +61,12 @@ namespace TablasPractica1
                                                                   dgvEmpleados[7, e.RowIndex].Value.ToString());
 
             actualiza.Show();
-            this.Close();
         }
 
         private void butInsertar_Click(object sender, EventArgs e)
         {
             InsertarEmpleados insertar = new InsertarEmpleados();
             insertar.Show();
-            this.Close();
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)

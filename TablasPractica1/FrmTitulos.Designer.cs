@@ -127,7 +127,7 @@
             Controls.Add(butInsertar);
             Controls.Add(dgvTitulos);
             Name = "FrmTitulos";
-            Text = "FrmTitulos";
+            Text = "Tabla de Titulos";
             Activated += FrmTitulos_Activated;
             Load += FrmTitulos_Load;
             ((System.ComponentModel.ISupportInitialize)dgvTitulos).EndInit();

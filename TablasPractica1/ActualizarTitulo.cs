@@ -17,46 +17,42 @@ namespace TablasPractica1
                                 string royalty, string ytd_sales, string notas, string pubdate)
         {
             InitializeComponent();
+            dtpFecha.MaxDate = DateTime.Now;
             txtID.Text = ID;
             txtTitulo.Text = titulo;
             txtTipo.Text = tipo;
-            txtPub_ID.Text = pub_ID;
+            //cbPub_ID.Text = pub_ID;
             txtPrecio.Text = precio;
             txtAdvance.Text = advance;
             txtRoyalty.Text = royalty;
             txtYtd_Sales.Text = ytd_sales;
-            mtbPubdate.Text = pubdate;
+            dtpFecha.Text = pubdate;
             txtNotas.Text = notas;
+
+            for (int i = 0; i < cmbPubId.Items.Count; i++)
+            {
+                if (cmbPubId.Items[i].ToString() == pub_ID)
+                {
+                    cmbPubId.SelectedIndex = i;
+                }
+            }
         }
 
         private void txtActualizar_Click(object sender, EventArgs e)
         {
             try
             {
-                string dia = mtbPubdate.Text.Substring(0, 2);
-                string mes = mtbPubdate.Text.Substring(3, 2);
-                string año = mtbPubdate.Text.Substring(6, 4);
-                string fecha = mes + "/" + dia + "/" + año;
-
                 Datos datos = new Datos();
-                bool f = datos.comando("update titles set " +
-                                       "title = '" + txtTitulo.Text.Replace("'", "''") +
-                                       "', type = '" + txtTipo.Text +
-                                       "', pub_id = '" + txtPub_ID.Text +
-                                       "', price = '" + double.Parse(txtPrecio.Text) +
-                                       "', advance = '" + double.Parse(txtAdvance.Text) +
-                                       "', royalty = " + int.Parse(txtRoyalty.Text) +
-                                       ", ytd_sales = " + int.Parse(txtYtd_Sales.Text) +
-                                       ", notes = '" + txtNotas.Text.Replace("'", "''") +
-                                       "', pubdate = '" + fecha +
-                                       "' where title_id = '" + txtID.Text + "'");
+                bool f = datos.comando("update titles set title = '" + txtTitulo.Text.Replace("'", "''") +
+                "', type = '" + txtTipo.Text.Replace("'", "''") + "', pub_id = (select pub_id from publishers where pub_name = '" + cmbPubId.SelectedItem.ToString() + "'), price =" + double.Parse(txtPrecio.Text == "" ? "0" : txtPrecio.Text) + ", advance =" + double.Parse(txtAdvance.Text == "" ? "0" : txtAdvance.Text) +
+                ", royalty = " + double.Parse(txtRoyalty.Text == "" ? "0" : txtRoyalty.Text) + ",ytd_sales = " + int.Parse(txtYtd_Sales.Text == "" ? "0" : txtYtd_Sales.Text) +
+                ", notes= '" + txtNotas.Text.Replace("'", "''") + "', pubdate='" + dtpFecha.Value.Year + "-" + dtpFecha.Value.Month + "-" + dtpFecha.Value.Day +
+                "'  where title_id = '" + txtID.Text + "'");
 
                 if (f == true)
                 {
                     MessageBox.Show("Datos actualizados", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Close();
-                    FrmTitulos titulos = new FrmTitulos();
-                    titulos.Show();
                 }
                 else
                 {
@@ -72,8 +68,6 @@ namespace TablasPractica1
         private void butCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
-            FrmTitulos titulos = new FrmTitulos();
-            titulos.Show();
         }
 
         private void txtTipo_TextChanged(object sender, EventArgs e)
@@ -94,8 +88,6 @@ namespace TablasPractica1
                 {
                     MessageBox.Show("Datos eliminados", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Close();
-                    FrmTitulos titulos = new FrmTitulos();
-                    titulos.Show();
                 }
                 else
                 {

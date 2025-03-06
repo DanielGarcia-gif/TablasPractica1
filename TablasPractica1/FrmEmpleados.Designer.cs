@@ -128,7 +128,7 @@
             Controls.Add(butInsertar);
             Controls.Add(dgvEmpleados);
             Name = "FrmEmpleados";
-            Text = "FrmEmpleados";
+            Text = "Tabla Empleados";
             Activated += FrmEmpleados_Activated;
             Load += FrmEmpleados_Load;
             ((System.ComponentModel.ISupportInitialize)dgvEmpleados).EndInit();

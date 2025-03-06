@@ -63,6 +63,26 @@ namespace TablasPractica1.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _269653 {
+            get {
+                object obj = ResourceManager.GetObject("269653", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _2696531 {
+            get {
+                object obj = ResourceManager.GetObject("2696531", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Captura_de_pantalla_2025_03_03_163039 {
             get {
                 object obj = ResourceManager.GetObject("Captura de pantalla 2025-03-03 163039", resourceCulture);
@@ -136,6 +156,26 @@ namespace TablasPractica1.Properties {
         internal static System.Drawing.Bitmap employeeM {
             get {
                 object obj = ResourceManager.GetObject("employeeM", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap istockphoto_1300424804_612x612 {
+            get {
+                object obj = ResourceManager.GetObject("istockphoto-1300424804-612x612", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pngtree_author_of_professional_imagination_illustration_series_png_image_4265200 {
+            get {
+                object obj = ResourceManager.GetObject("pngtree-author-of-professional-imagination-illustration-series-png-image_4265200", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

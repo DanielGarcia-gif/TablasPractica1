@@ -48,10 +48,10 @@
             label10 = new Label();
             butCancelar = new Button();
             txtActualizar = new Button();
-            mtbPubdate = new MaskedTextBox();
             butEliminar = new Button();
             pictureBox1 = new PictureBox();
-            cbPub_ID = new ComboBox();
+            cmbPubId = new ComboBox();
+            dtpFecha = new DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -108,7 +108,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            label4.Location = new Point(18, 181);
+            label4.Location = new Point(136, 125);
             label4.Name = "label4";
             label4.Size = new Size(56, 15);
             label4.TabIndex = 7;
@@ -118,7 +118,7 @@
             // 
             txtYtd_Sales.BackColor = Color.FromArgb(224, 224, 224);
             txtYtd_Sales.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            txtYtd_Sales.Location = new Point(18, 199);
+            txtYtd_Sales.Location = new Point(136, 143);
             txtYtd_Sales.Name = "txtYtd_Sales";
             txtYtd_Sales.Size = new Size(100, 23);
             txtYtd_Sales.TabIndex = 6;
@@ -226,7 +226,7 @@
             // 
             label10.AutoSize = true;
             label10.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            label10.Location = new Point(136, 125);
+            label10.Location = new Point(18, 182);
             label10.Name = "label10";
             label10.Size = new Size(53, 15);
             label10.TabIndex = 19;
@@ -254,16 +254,6 @@
             txtActualizar.UseVisualStyleBackColor = true;
             txtActualizar.Click += txtActualizar_Click;
             // 
-            // mtbPubdate
-            // 
-            mtbPubdate.BackColor = Color.FromArgb(224, 224, 224);
-            mtbPubdate.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            mtbPubdate.Location = new Point(136, 143);
-            mtbPubdate.Mask = "00/00/0000";
-            mtbPubdate.Name = "mtbPubdate";
-            mtbPubdate.Size = new Size(100, 23);
-            mtbPubdate.TabIndex = 22;
-            // 
             // butEliminar
             // 
             butEliminar.BackgroundImage = Properties.Resources.Captura_de_pantalla_2025_03_03_163039;
@@ -285,14 +275,23 @@
             pictureBox1.TabIndex = 46;
             pictureBox1.TabStop = false;
             // 
-            // cbPub_ID
+            // cmbPubId
             // 
-            cbPub_ID.FormattingEnabled = true;
-            cbPub_ID.Items.AddRange(new object[] { "0736", "0877", "1389", "1622", "1756", "9901", "9952", "9999" });
-            cbPub_ID.Location = new Point(16, 86);
-            cbPub_ID.Name = "cbPub_ID";
-            cbPub_ID.Size = new Size(99, 23);
-            cbPub_ID.TabIndex = 50;
+            cmbPubId.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            cmbPubId.FormattingEnabled = true;
+            cmbPubId.Items.AddRange(new object[] { "New Moon Books", "Binnet & Hardley", "Algodata Infosystems", "Five Lakes Publishing", "Ramona Publishers", "GGG&G", "Scootney Books", "Lucerne Publishing" });
+            cmbPubId.Location = new Point(18, 86);
+            cmbPubId.Margin = new Padding(3, 2, 3, 2);
+            cmbPubId.Name = "cmbPubId";
+            cmbPubId.Size = new Size(97, 23);
+            cmbPubId.TabIndex = 47;
+            // 
+            // dtpFecha
+            // 
+            dtpFecha.Location = new Point(18, 200);
+            dtpFecha.Name = "dtpFecha";
+            dtpFecha.Size = new Size(218, 23);
+            dtpFecha.TabIndex = 48;
             // 
             // ActualizarTitulo
             // 
@@ -300,10 +299,10 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Window;
             ClientSize = new Size(445, 349);
-            Controls.Add(cbPub_ID);
+            Controls.Add(dtpFecha);
+            Controls.Add(cmbPubId);
             Controls.Add(pictureBox1);
             Controls.Add(butEliminar);
-            Controls.Add(mtbPubdate);
             Controls.Add(txtActualizar);
             Controls.Add(butCancelar);
             Controls.Add(label10);
@@ -325,7 +324,7 @@
             Controls.Add(label1);
             Controls.Add(txtID);
             Name = "ActualizarTitulo";
-            Text = "ActualizarTitulo";
+            Text = "Actualizar Titulo";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -353,9 +352,9 @@
         private Label label10;
         private Button butCancelar;
         private Button txtActualizar;
-        private MaskedTextBox mtbPubdate;
         private Button butEliminar;
         private PictureBox pictureBox1;
-        private ComboBox cbPub_ID;
+        private ComboBox cmbPubId;
+        private DateTimePicker dtpFecha;
     }
 }

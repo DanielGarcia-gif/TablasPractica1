@@ -15,35 +15,25 @@ namespace TablasPractica1
         public InsertarLibros()
         {
             InitializeComponent();
+            dtpFecha.MaxDate = DateTime.Now;
         }
 
         private void butInsertar_Click(object sender, EventArgs e)
         {
             try
             {
-                string dia = mtbPubdate.Text.Substring(0, 2);
-                string mes = mtbPubdate.Text.Substring(3, 2);
-                string año = mtbPubdate.Text.Substring(6, 4);
-                string fecha = mes + "/" + dia + "/" + año;
-
                 Datos datos = new Datos();
-                bool f = datos.comando("insert into titles values ('" + txtID.Text + "','" +
-                                                                       txtTitulo.Text.Replace("'", "''") + "','" +
-                                                                       txtTipo.Text + "','" +
-                                                                       txtPub_ID.Text + "','" +
-                                                                       double.Parse(txtPrecio.Text) + "','" +
-                                                                       double.Parse(txtAdvance.Text) + "'," +
-                                                                       int.Parse(txtRoyalty.Text) + "," +
-                                                                       int.Parse(txtYtd_Sales.Text) + ",'" +
-                                                                       txtNotas.Text.Replace("'", "''") + "','" +
-                                                                       fecha + "')");
+                bool f = datos.comando("insert into titles values('" +
+                "" + txtID.Text.Replace("'", "''") + "', '" + txtTitulo.Text.Replace("'", "''") + "', '" + txtTipo.Text.Replace("'", "''") + 
+                "', (select pub_id from publishers where pub_name ='" +
+                "" + cmbPubId.SelectedItem.ToString() + "')," + double.Parse(txtPrecio.Text) + "," + double.Parse(txtAdvance.Text) +
+                "," + double.Parse(txtRoyalty.Text) + "," + int.Parse(txtYtd_Sales.Text) + ",'" + txtNotas.Text.Replace("'", "''") + "'" +
+                ", '" + dtpFecha.Value.Month + "-" + dtpFecha.Value.Day + "-" + dtpFecha.Value.Year + "')");
 
                 if (f == true)
                 {
                     MessageBox.Show("Datos insertados", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Close();
-                    FrmTitulos titulos = new FrmTitulos();
-                    titulos.Show();
                 }
                 else
                 {
@@ -63,8 +53,6 @@ namespace TablasPractica1
         private void butCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
-            FrmTitulos titulos = new FrmTitulos();
-            titulos.Show();
         }
     }
 }

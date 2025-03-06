@@ -15,25 +15,19 @@ namespace TablasPractica1
         public InsertarEmpleados()
         {
             InitializeComponent();
+            dtpFecha.MaxDate = DateTime.Now;
             pictureBox.Image = null;
         }
 
         private void butCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
-            FrmEmpleados empleados = new FrmEmpleados();
-            empleados.Show();
         }
 
         private void butInsertar_Click(object sender, EventArgs e)
         {
             try
             {
-                string dia = mtbHire_Date.Text.Substring(0, 2);
-                string mes = mtbHire_Date.Text.Substring(3, 2);
-                string año = mtbHire_Date.Text.Substring(6, 4);
-                string fecha = año + "/" + mes + "/" + dia;
-
                 if (txtID.Text.Substring(8, 1) != "M" && txtID.Text.Substring(8, 1) != "F")
                 {
                     MessageBox.Show("Error al insertar \nEl ultimo digito del ID es el genero \n- Masculino (M) \n- Femenino (F)",
@@ -43,21 +37,17 @@ namespace TablasPractica1
                 else
                 {
                     Datos datos = new Datos();
-                    bool f = datos.comando("insert into employee values ('" + txtID.Text + "','" +
-                                                                           txtFName.Text.Replace("'", "''") + "','" +
-                                                                           txtMinit.Text + "','" +
-                                                                           txtLName.Text.Replace("'", "''") + "'," +
-                                                                           (cbJob_ID.SelectedIndex + 1) + "," +
-                                                                           int.Parse(txtJob_lvl.Text) + ",'" +
-                                                                           (cbPub_ID.SelectedIndex + 1) + "','" +
-                                                                           fecha + "')");
+                    bool f = datos.comando("insert into employee values ('" + txtID.Text + "'" +
+                                           ",'" + txtFName.Text.Replace("'", "''") + "','" + txtMinit.Text + "','" 
+                                           + txtLName.Text.Replace("'", "''") + "', (select job_id from jobs where job_desc ='" 
+                                           + cbJob_ID.SelectedItem.ToString() + "' )" + ",'" + txtJob_lvl.Text 
+                                           + "',(select pub_id from publishers where pub_name = '" + cmbPubId.SelectedItem.ToString() 
+                                           + "'),'" + dtpFecha.Value.Year + "-" + dtpFecha.Value.Month + "-" + dtpFecha.Value.Day + "')");
 
                     if (f == true)
                     {
                         MessageBox.Show("Datos insertados", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         this.Close();
-                        FrmEmpleados empleados = new FrmEmpleados();
-                        empleados.Show();
                     }
                     else
                     {

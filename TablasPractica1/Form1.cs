@@ -23,5 +23,17 @@ namespace TablasPractica1
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FrmAutores autores = new FrmAutores();
+            autores.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            FrmTrabajos trabajos = new FrmTrabajos();
+            trabajos.Show();
+        }
     }
 }

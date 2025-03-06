@@ -17,21 +17,37 @@ namespace TablasPractica1
                                   string pub_ID, string hire_date)
         {
             InitializeComponent();
+            dtpFecha.MaxDate = DateTime.Now;
             txtID.Text = ID;
             txtFName.Text = fname;
             txtLName.Text = lname;
             txtMinit.Text = minit;
-            //txtJob_ID.Text = job_ID;
+            //cbJob_ID.SelectedIndex = int.Parse(job_ID) - 1;
             txtJob_lvl.Text = job_lvl;
-            //txtPub_ID.Text = pub_ID;
-            mtbHire_Date.Text = hire_date;
+            //cbPub_ID.Text = pub_ID;
+            dtpFecha.Text = hire_date;
+
+            for (int i = 0; i < cbJob_ID.Items.Count; i++)
+            {
+                if (cbJob_ID.Items[i].ToString() == job_ID)
+                {
+                    cbJob_ID.SelectedIndex = i;
+                }
+
+            }
+
+            for (int i = 0; i < cmbPubId.Items.Count; i++)
+            {
+                if (cmbPubId.Items[i].ToString() == pub_ID)
+                {
+                    cmbPubId.SelectedIndex = i;
+                }
+            }
         }
 
         private void butCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
-            FrmEmpleados empleados = new FrmEmpleados();
-            empleados.Show();
         }
 
         private void ActualizaEmpleados_Load(object sender, EventArgs e)
@@ -65,8 +81,6 @@ namespace TablasPractica1
                 {
                     MessageBox.Show("Datos eliminados", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Close();
-                    FrmEmpleados empleados = new FrmEmpleados();
-                    empleados.Show();
                 }
                 else
                 {
@@ -79,28 +93,17 @@ namespace TablasPractica1
         {
             try
             {
-                string dia = mtbHire_Date.Text.Substring(0, 2);
-                string mes = mtbHire_Date.Text.Substring(3, 2);
-                string año = mtbHire_Date.Text.Substring(6, 4);
-                string fecha = mes + "/" + dia + "/" + año;
-
                 Datos datos = new Datos();
-                bool f = datos.comando("update employee set " +
-                                       "fname = '" + txtFName.Text.Replace("'", "''") +
-                                       "', minit = '" + txtMinit.Text +
-                                       "', lname = '" + txtLName.Text.Replace("'", "''") +
-                                       "', job_id = " + (cbJob_ID.SelectedIndex + 1) +
-                                       ", job_lvl = " + int.Parse(txtJob_lvl.Text) +
-                                       ", pub_id = '" + (cbPub_ID.SelectedIndex + 1) +
-                                       "', hire_date = '" + fecha +
-                                       "' where emp_id = '" + txtID.Text + "'");
+                bool f = datos.comando("update employee set fname = '" + txtFName.Text.Replace("'", "''") + "'," +
+                    "minit ='" + txtMinit.Text + "',lname ='" + txtLName.Text.Replace("'", "''") + "',job_id= '" + (cbJob_ID.SelectedIndex + 1) +
+                    "', job_lvL ='" + txtJob_lvl.Text + "',pub_id = (select pub_id from publishers where pub_name = '" + cmbPubId.SelectedItem.ToString() + "'), hire_date= '"
+                    + dtpFecha.Value.Year + "-" + dtpFecha.Value.Month + "-" + dtpFecha.Value.Day + "' where emp_id = " +
+                    "'" + txtID.Text + "'");
 
                 if (f == true)
                 {
                     MessageBox.Show("Datos actualizados", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Close();
-                    FrmEmpleados empleados = new FrmEmpleados();
-                    empleados.Show();
                 }
                 else
                 {

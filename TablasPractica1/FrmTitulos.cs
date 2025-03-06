@@ -20,9 +20,10 @@ namespace TablasPractica1
         private void FrmTitulos_Load(object sender, EventArgs e)
         {
             Datos obj = new Datos();
-            DataSet ds = obj.consulta(("Select title_id as ID,title as [Title], type as [Type],pub_id as PubID," +
-                                      "price as Price,advance as Advance ,royalty as Royalty,ytd_sales as Sales," +
-                                      "notes as Notes,pubdate as PubDate From Titles");
+            DataSet ds = obj.consulta("Select title_id as ID,title as [Title], type as [Type], " +
+                                      "pb.pub_name as PubNombre,price as Price,advance as Advance ," +
+                                      "royalty as Royalty,ytd_sales as Sales,notes as Notes,pubdate as PubDate  " +
+                                      "From Titles t, publishers pb where t.pub_id = pb.pub_id");
 
             if (ds != null)
             {
@@ -44,7 +45,6 @@ namespace TablasPractica1
                                                               dgvTitulos[9, e.RowIndex].Value.ToString());
 
             actualiza.Show();
-            this.Close();
         }
 
         private void FrmTitulos_Activated(object sender, EventArgs e)
@@ -55,9 +55,10 @@ namespace TablasPractica1
         private void ActualizaGrid()
         {
             Datos obj = new Datos();
-            DataSet ds = obj.consulta("Select title_id as ID,title as [Title], type as [Type],pub_id as PubID," +
-                                      "price as Price,advance as Advance ,royalty as Royalty,ytd_sales as Sales," +
-                                      "notes as Notes,pubdate as PubDate From Titles");
+            DataSet ds = obj.consulta("Select title_id as ID,title as [Title], type as [Type], " +
+                                      "pb.pub_name as PubNombre,price as Price,advance as Advance ," +
+                                      "royalty as Royalty,ytd_sales as Sales,notes as Notes,pubdate as PubDate  " +
+                                      "From Titles t, publishers pb where t.pub_id = pb.pub_id");
 
             if (ds != null)
             {
@@ -69,7 +70,6 @@ namespace TablasPractica1
         {
             InsertarLibros libros = new InsertarLibros();
             libros.Show();
-            this.Close();
         }
     }
 }

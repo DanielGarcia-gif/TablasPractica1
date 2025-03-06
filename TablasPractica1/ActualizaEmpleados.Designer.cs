@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             butEliminar = new Button();
-            mtbHire_Date = new MaskedTextBox();
             butActualizar = new Button();
             butCancelar = new Button();
             label10 = new Label();
@@ -47,7 +46,8 @@
             txtID = new TextBox();
             pictureBox = new PictureBox();
             cbJob_ID = new ComboBox();
-            cbPub_ID = new ComboBox();
+            cmbPubId = new ComboBox();
+            dtpFecha = new DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)pictureBox).BeginInit();
             SuspendLayout();
             // 
@@ -62,16 +62,6 @@
             butEliminar.TabIndex = 46;
             butEliminar.UseVisualStyleBackColor = true;
             butEliminar.Click += butEliminar_Click;
-            // 
-            // mtbHire_Date
-            // 
-            mtbHire_Date.BackColor = Color.FromArgb(224, 224, 224);
-            mtbHire_Date.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            mtbHire_Date.Location = new Point(133, 139);
-            mtbHire_Date.Mask = "00/00/0000";
-            mtbHire_Date.Name = "mtbHire_Date";
-            mtbHire_Date.Size = new Size(100, 23);
-            mtbHire_Date.TabIndex = 45;
             // 
             // butActualizar
             // 
@@ -101,7 +91,7 @@
             // 
             label10.AutoSize = true;
             label10.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            label10.Location = new Point(133, 121);
+            label10.Location = new Point(212, 121);
             label10.Name = "label10";
             label10.Size = new Size(61, 15);
             label10.TabIndex = 42;
@@ -111,7 +101,7 @@
             // 
             label9.AutoSize = true;
             label9.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            label9.Location = new Point(133, 65);
+            label9.Location = new Point(212, 69);
             label9.Name = "label9";
             label9.Size = new Size(44, 15);
             label9.TabIndex = 41;
@@ -121,7 +111,7 @@
             // 
             txtJob_lvl.BackColor = Color.FromArgb(224, 224, 224);
             txtJob_lvl.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            txtJob_lvl.Location = new Point(133, 83);
+            txtJob_lvl.Location = new Point(212, 87);
             txtJob_lvl.Name = "txtJob_lvl";
             txtJob_lvl.Size = new Size(121, 23);
             txtJob_lvl.TabIndex = 40;
@@ -232,7 +222,7 @@
             // pictureBox
             // 
             pictureBox.Image = Properties.Resources.employeeM;
-            pictureBox.Location = new Point(316, 65);
+            pictureBox.Location = new Point(365, 65);
             pictureBox.Name = "pictureBox";
             pictureBox.Size = new Size(93, 97);
             pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -241,21 +231,32 @@
             // 
             // cbJob_ID
             // 
+            cbJob_ID.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbJob_ID.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             cbJob_ID.FormattingEnabled = true;
-            cbJob_ID.Items.AddRange(new object[] { "New Hire", "Chief Executive Officer", "Bussines Operations Manager", "Chief Financial Officer", "Publisher", "Managing Editor", "Marketing Manager", "Public Relations Manager", "Acquistions Manager", "Productions Manager", "Operations Manager", "Editor", "Sales Representative", "Designer" });
+            cbJob_ID.Items.AddRange(new object[] { "New Hire - Job not specified", "Chief Executive Officer", "Business Operations Manager", "Chief Financial Officier", "Publisher", "Managing Editor", "Marketing Manager", "Public Relations Manager", "Acquisitions Manager", "Productions Manager", "Operations Manager", "Editor", "Sales Representative", "Designer" });
             cbJob_ID.Location = new Point(13, 87);
             cbJob_ID.Name = "cbJob_ID";
-            cbJob_ID.Size = new Size(99, 23);
+            cbJob_ID.Size = new Size(181, 23);
             cbJob_ID.TabIndex = 48;
             // 
-            // cbPub_ID
+            // cmbPubId
             // 
-            cbPub_ID.FormattingEnabled = true;
-            cbPub_ID.Items.AddRange(new object[] { "0736", "0877", "1389", "1622", "1756", "9901", "9952", "9999" });
-            cbPub_ID.Location = new Point(12, 139);
-            cbPub_ID.Name = "cbPub_ID";
-            cbPub_ID.Size = new Size(99, 23);
-            cbPub_ID.TabIndex = 49;
+            cmbPubId.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            cmbPubId.FormattingEnabled = true;
+            cmbPubId.Items.AddRange(new object[] { "New Moon Books", "Binnet & Hardley", "Algodata Infosystems", "Five Lakes Publishing", "Ramona Publishers", "GGG&G", "Scootney Books", "Lucerne Publishing" });
+            cmbPubId.Location = new Point(13, 139);
+            cmbPubId.Margin = new Padding(3, 2, 3, 2);
+            cmbPubId.Name = "cmbPubId";
+            cmbPubId.Size = new Size(181, 23);
+            cmbPubId.TabIndex = 49;
+            // 
+            // dtpFecha
+            // 
+            dtpFecha.Location = new Point(212, 139);
+            dtpFecha.Name = "dtpFecha";
+            dtpFecha.Size = new Size(121, 23);
+            dtpFecha.TabIndex = 50;
             // 
             // ActualizaEmpleados
             // 
@@ -263,11 +264,11 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Window;
             ClientSize = new Size(478, 245);
-            Controls.Add(cbPub_ID);
+            Controls.Add(dtpFecha);
+            Controls.Add(cmbPubId);
             Controls.Add(cbJob_ID);
             Controls.Add(pictureBox);
             Controls.Add(butEliminar);
-            Controls.Add(mtbHire_Date);
             Controls.Add(butActualizar);
             Controls.Add(butCancelar);
             Controls.Add(label10);
@@ -294,7 +295,6 @@
         #endregion
 
         private Button butEliminar;
-        private MaskedTextBox mtbHire_Date;
         private Button butActualizar;
         private Button butCancelar;
         private Label label10;
@@ -312,6 +312,7 @@
         private TextBox txtID;
         private PictureBox pictureBox;
         private ComboBox cbJob_ID;
-        private ComboBox cbPub_ID;
+        private ComboBox cmbPubId;
+        private DateTimePicker dtpFecha;
     }
 }
